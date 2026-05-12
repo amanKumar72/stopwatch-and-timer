@@ -22,9 +22,7 @@ export default function Stopwatch() {
     const seconds = Math.floor((ms % 60000) / 1000);
     const milliseconds = Math.floor((ms % 1000) / 10);
 
-    return `${String(minutes).padStart(2, "0")}:${String(
-      seconds
-    ).padStart(2, "0")}.${String(milliseconds).padStart(2, "0")}`;
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(milliseconds).padStart(2, "0")}`;
   };
 
   const handlePause = () => {
@@ -47,7 +45,7 @@ export default function Stopwatch() {
       "
     >
       <div className="flex flex-col items-center">
-        <p className="uppercase tracking-[0.35em] text-xs text-[var(--text-soft)] mb-8">
+        <p className="uppercase tracking-[0.35em] text-xs text-(--text-soft) mb-8">
           Stopwatch
         </p>
 
@@ -75,13 +73,13 @@ export default function Stopwatch() {
                 text-3xl md:text-5xl
                 font-extralight
                 time-text
-                text-[var(--text)]
+                text-(--text)
               "
             >
               {formatTime(time)}
             </h2>
 
-            <p className="mt-4 text-sm text-[var(--text-soft)] tracking-[0.25em] uppercase">
+            <p className="mt-4 text-sm text-(--text-soft) tracking-[0.25em] uppercase">
               Elapsed Time
             </p>
           </div>
@@ -93,8 +91,8 @@ export default function Stopwatch() {
               onClick={() => setIsRunning(true)}
               className="
                 h-11 md:h-14 px-6 py-2 rounded-2xl
-                bg-[var(--primary)]
-                hover:bg-[var(--primary-hover)]
+                bg-(--primary)
+                hover:bg-(--primary-hover)
                 text-white
                 flex items-center gap-3
                 transition-all duration-300
@@ -109,8 +107,8 @@ export default function Stopwatch() {
               onClick={handlePause}
               className="
                 h-11 md:h-14 px-6 py-2 rounded-2xl
-                bg-[var(--secondary)]
-                hover:bg-[var(--secondary-hover)]
+                bg-(--secondary)
+                hover:bg-(--secondary-hover)
                 text-white
                 flex items-center gap-3
                 transition-all duration-300
@@ -127,7 +125,7 @@ export default function Stopwatch() {
             className="
               h-11 md:h-14 px-8 rounded-2xl
               glass-card
-              text-[var(--text)]
+              text-(--text)
               flex items-center gap-3
               transition-all duration-300
               hover:scale-105

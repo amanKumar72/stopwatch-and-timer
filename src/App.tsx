@@ -10,11 +10,11 @@ export default function App() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className="min-h-screen bg-[var(--bg)] flex items-center justify-center px-4 py-6 md:py-10 md:px-6">
+      <main className="min-h-screen bg-(--bg) flex justify-center px-4 py-6 md:py-10 md:px-6">
         <div className="w-full max-w-3xl">
           <div className="flex items-center justify-between mb-10">
             <div>
-              <p className="uppercase tracking-[0.35em] text-lg text-[var(--text-soft)] mb-3">
+              <p className="uppercase tracking-[0.35em] text-lg text-(--text-soft) mb-3">
                 Precision Time
               </p>
             </div>
@@ -24,9 +24,9 @@ export default function App() {
               className="
                 h-12 w-12 rounded-full
                 glass-card
-                bg-[var(--surface)]
+                bg-(--surface)
                 flex items-center justify-center
-                text-[var(--text)]
+                text-(--text)
                 transition-all duration-300
                 hover:scale-105
               "
@@ -53,8 +53,8 @@ export default function App() {
                 transition-all duration-300
                 ${
                   activeTab === "stopwatch"
-                    ? "bg-[var(--primary)] text-white soft-ring"
-                    : "text-[var(--text-soft)] hover:bg-white/5"
+                    ? "bg-(--primary) text-white soft-ring"
+                    : "text-(--text-soft) hover:bg-white/5"
                 }
               `}
             >
@@ -70,8 +70,8 @@ export default function App() {
                 transition-all duration-300
                 ${
                   activeTab === "timer"
-                    ? "bg-[var(--primary)] text-white soft-ring"
-                    : "text-[var(--text-soft)] hover:bg-white/5"
+                    ? "bg-(--primary) text-white soft-ring"
+                    : "text-(--text-soft) hover:bg-white/5"
                 }
               `}
             >
