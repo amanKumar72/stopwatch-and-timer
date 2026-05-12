@@ -5,7 +5,7 @@ export default function Stopwatch() {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (isRunning) {
@@ -17,7 +17,7 @@ export default function Stopwatch() {
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
-  const formatTime = (ms) => {
+  const formatTime = (ms: number) => {
     const minutes = Math.floor(ms / 60000);
     const seconds = Math.floor((ms % 60000) / 1000);
     const milliseconds = Math.floor((ms % 1000) / 10);

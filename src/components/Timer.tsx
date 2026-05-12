@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Pause, RotateCcw } from "lucide-react";
 
 export default function Timer() {
-  const [minutes, setMinutes] = useState(5);
+  const [minutes, setMinutes] = useState<number>(5);
 
-  const [secondsLeft, setSecondsLeft] = useState(minutes * 60);
+  const [secondsLeft, setSecondsLeft] = useState<number>(minutes * 60);
 
   const [isRunning, setIsRunning] = useState(false);
   const [customMinutes, setCustomMinutes] = useState("");
   const [customSeconds, setCustomSeconds] = useState("");
-    const intervalRef = useRef(null);
+    const intervalRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     setSecondsLeft(minutes * 60);
@@ -33,7 +33,7 @@ export default function Timer() {
     return () => clearInterval(intervalRef.current);
   }, [isRunning]);
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
 
