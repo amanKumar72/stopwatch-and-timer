@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f1ea;
+  --surface: rgba(255, 252, 248, 0.72);
+  --surface-strong: #ffffff;
+  --surface-border: rgba(120, 110, 100, 0.08);
+
+  --text: #1f1b17;
+  --text-soft: #7b7269;
+
+  --primary: #c96b3b;
+  --primary-hover: #b95d2d;
+
+  --secondary: #2f343b;
+  --secondary-hover: #22262c;
+
+  --success: #6f8f72;
+  --danger: #c75c5c;
+
+  --ring: rgba(201, 107, 59, 0.28);
+
+  --shadow:
+    0 10px 30px rgba(32, 22, 14, 0.06),
+    0 2px 8px rgba(32, 22, 14, 0.04);
+
+  --font:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #111315;
+
+  --surface: rgba(24, 27, 31, 0.75);
+  --surface-strong: #181b1f;
+  --surface-border: rgba(255, 255, 255, 0.05);
+
+  --text: #f3efe8;
+  --text-soft: #978f84;
+
+  --primary: #e38b5b;
+  --primary-hover: #f09b6d;
+
+  --secondary: #2a2e35;
+  --secondary-hover: #343942;
+
+  --success: #7aa37f;
+  --danger: #d56d6d;
+
+  --ring: rgba(227, 139, 91, 0.25);
+
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(201, 107, 59, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(111, 143, 114, 0.08),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+.glass-card {
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow);
+}
+
+.time-text {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.06em;
+}
+
+.soft-ring {
+  box-shadow: 0 0 0 6px var(--ring);
+}
